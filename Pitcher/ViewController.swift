@@ -11,25 +11,31 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var recordingLabel: UILabel!
+    @IBOutlet weak var stopButton: UIButton!
+    @IBOutlet weak var recordButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
+    override func viewWillAppear(animated: Bool) {
+        stopButton.hidden = true;
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     @IBAction func recordAudio(sender: UIButton) {
-        // TODO: use unary operator here for clean up
-        if (recordingLabel.hidden == false) {
-            recordingLabel.hidden = true;
-        } else {
-            recordingLabel.text = "Recording...Click to stop";
-            recordingLabel.hidden = false;
-        }
+        recordButton.enabled = false;
+        recordingLabel.hidden = false;
+        stopButton.hidden = false;
+    }
+    
+    @IBAction func stopAudio(sender: UIButton) {
+        recordingLabel.hidden = true;
+        recordButton.enabled = true;
     }
 }
 
