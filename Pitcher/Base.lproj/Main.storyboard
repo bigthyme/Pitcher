@@ -41,7 +41,7 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="166" y="417" width="69" height="20"/>
+                                    <rect key="frame" x="166" y="290" width="69" height="20"/>
                                 </variation>
                             </label>
                         </subviews>
@@ -119,17 +119,57 @@
             </objects>
             <point key="canvasLocation" x="133.5" y="-557"/>
         </scene>
-        <!--View Controller-->
+        <!--Play Sounds View Controller-->
         <scene sceneID="gmw-nm-jqv">
             <objects>
-                <viewController id="5Y9-oP-gCb" sceneMemberID="viewController">
+                <viewController id="5Y9-oP-gCb" customClass="PlaySoundsViewController" customModule="Pitcher" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CNO-n5-GaB"/>
                         <viewControllerLayoutGuide type="bottom" id="sIG-0F-0nJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8zZ-1V-esg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38R-UD-ng9">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="FAST PLAY">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="230" y="115" width="78" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="fastPlay:" destination="5Y9-oP-gCb" eventType="touchUpInside" id="t90-I9-4X2"/>
+                                    <action selector="slowPlay:" destination="5Y9-oP-gCb" eventType="touchUpInside" id="cZS-cw-yDA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oah-rA-20v">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="SLOW PLAY">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="115" width="86" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="slowPlay:" destination="5Y9-oP-gCb" eventType="touchUpInside" id="AV6-Z0-nNF"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="38R-UD-ng9"/>
+                                <exclude reference="oah-rA-20v"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="38R-UD-ng9"/>
+                                <include reference="oah-rA-20v"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="70g-Sh-8P4" userLabel="First Responder" sceneMemberID="firstResponder"/>
