@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1cy-Rj-a85">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -131,43 +132,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38R-UD-ng9">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oah-rA-20v">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="FAST PLAY">
+                                <state key="normal" image="slow">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="230" y="115" width="78" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="fastPlay:" destination="5Y9-oP-gCb" eventType="touchUpInside" id="t90-I9-4X2"/>
-                                    <action selector="slowPlay:" destination="5Y9-oP-gCb" eventType="touchUpInside" id="cZS-cw-yDA"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oah-rA-20v">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="SLOW PLAY">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="115" width="86" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="slowPlay:" destination="5Y9-oP-gCb" eventType="touchUpInside" id="AV6-Z0-nNF"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oah-rA-20v" firstAttribute="width" secondItem="8zZ-1V-esg" secondAttribute="width" id="8ou-Dj-Hgz"/>
+                            <constraint firstItem="oah-rA-20v" firstAttribute="top" secondItem="CNO-n5-GaB" secondAttribute="bottom" constant="51" id="KJd-Q5-jbe"/>
+                            <constraint firstItem="oah-rA-20v" firstAttribute="top" secondItem="CNO-n5-GaB" secondAttribute="bottom" constant="51" id="OeH-Ji-hJ3"/>
+                            <constraint firstItem="oah-rA-20v" firstAttribute="leading" secondItem="8zZ-1V-esg" secondAttribute="leadingMargin" constant="30" id="XeS-HL-krT"/>
+                            <constraint firstItem="oah-rA-20v" firstAttribute="top" secondItem="CNO-n5-GaB" secondAttribute="bottom" constant="50" id="puU-aI-dha"/>
+                            <constraint firstItem="oah-rA-20v" firstAttribute="leading" secondItem="8zZ-1V-esg" secondAttribute="leadingMargin" constant="4" id="vkU-ov-qSU"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="38R-UD-ng9"/>
                                 <exclude reference="oah-rA-20v"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="8ou-Dj-Hgz"/>
+                                <exclude reference="KJd-Q5-jbe"/>
+                                <exclude reference="OeH-Ji-hJ3"/>
+                                <exclude reference="XeS-HL-krT"/>
+                                <exclude reference="puU-aI-dha"/>
+                                <exclude reference="vkU-ov-qSU"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="38R-UD-ng9"/>
                                 <include reference="oah-rA-20v"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="8ou-Dj-Hgz"/>
+                                <exclude reference="KJd-Q5-jbe"/>
+                                <exclude reference="OeH-Ji-hJ3"/>
+                                <include reference="XeS-HL-krT"/>
+                                <include reference="puU-aI-dha"/>
+                                <exclude reference="vkU-ov-qSU"/>
                             </mask>
                         </variation>
                     </view>
@@ -179,6 +186,7 @@
     </scenes>
     <resources>
         <image name="microphone" width="100" height="100"/>
+        <image name="slow" width="100" height="100"/>
         <image name="stop" width="50" height="50"/>
     </resources>
 </document>

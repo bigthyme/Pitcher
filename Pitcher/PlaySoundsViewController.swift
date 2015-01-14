@@ -26,10 +26,6 @@ class PlaySoundsViewController: UIViewController {
         println("SLOWLY PLAYING...");
     }
     
-    @IBAction func fastPlay(sender: UIButton) {
-        println("FASTLY PLAYING...");
-    }
-    
     /*
     // MARK: - Navigation
 
