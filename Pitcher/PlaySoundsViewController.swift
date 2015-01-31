@@ -19,12 +19,14 @@ class PlaySoundsViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         var fileName = "life_is_like"
+        var fileType = "mp3"
         var bundle = NSBundle.mainBundle()
         
-        if var soundFile = NSURL(fileURLWithPath: bundle.pathForResource(fileName, ofType: "mp3")!) {
+        if var soundFile = NSURL(fileURLWithPath: bundle.pathForResource(fileName, ofType: fileType)!) {
             self.audioPlayer = AVAudioPlayer(contentsOfURL: soundFile, error: nil)
+            self.audioPlayer.enableRate = true
         } else {
-            println("no file named " + fileName + " found")
+            println("Error: No file named " + fileName + " " + fileType + " in mainBundle")
         }
     }
 
@@ -35,6 +37,8 @@ class PlaySoundsViewController: UIViewController {
     
 
     @IBAction func slowPlay(sender: UIButton) {
+        self.audioPlayer.stop()
+        self.audioPlayer.rate = 0.5
         self.audioPlayer.play()
     }
     
