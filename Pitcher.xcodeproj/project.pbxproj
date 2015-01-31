@@ -14,6 +14,7 @@
 		922F6A6F1A64D8C900A26955 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 922F6A6E1A64D8C900A26955 /* Images.xcassets */; };
 		922F6A721A64D8C900A26955 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922F6A701A64D8C900A26955 /* LaunchScreen.xib */; };
 		922F6A7E1A64D8C900A26955 /* PitcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922F6A7D1A64D8C900A26955 /* PitcherTests.swift */; };
+		92465E851A7D6C3700D2FE91 /* life_is_like.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 92465E841A7D6C3700D2FE91 /* life_is_like.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		922F6A771A64D8C900A26955 /* PitcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PitcherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		922F6A7C1A64D8C900A26955 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		922F6A7D1A64D8C900A26955 /* PitcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitcherTests.swift; sourceTree = "<group>"; };
+		92465E841A7D6C3700D2FE91 /* life_is_like.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = life_is_like.mp3; path = ../../Downloads/life_is_like.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 		922F6A591A64D8C900A26955 = {
 			isa = PBXGroup;
 			children = (
+				92465E841A7D6C3700D2FE91 /* life_is_like.mp3 */,
 				922F6A641A64D8C900A26955 /* Pitcher */,
 				922F6A7A1A64D8C900A26955 /* PitcherTests */,
 				922F6A631A64D8C900A26955 /* Products */,
@@ -196,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				922F6A6D1A64D8C900A26955 /* Main.storyboard in Resources */,
+				92465E851A7D6C3700D2FE91 /* life_is_like.mp3 in Resources */,
 				922F6A721A64D8C900A26955 /* LaunchScreen.xib in Resources */,
 				922F6A6F1A64D8C900A26955 /* Images.xcassets in Resources */,
 			);
