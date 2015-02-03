@@ -12,7 +12,7 @@ import AVFoundation
 class PlaySoundsViewController: UIViewController {
     
     // instantiate audio player class
-    var audioPlayer = AVAudioPlayer()
+    var audioPlayer:AVAudioPlayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +23,8 @@ class PlaySoundsViewController: UIViewController {
         var bundle = NSBundle.mainBundle()
         
         if var soundFile = NSURL(fileURLWithPath: bundle.pathForResource(fileName, ofType: fileType)!) {
-            self.audioPlayer = AVAudioPlayer(contentsOfURL: soundFile, error: nil)
-            self.audioPlayer.enableRate = true
+            audioPlayer = AVAudioPlayer(contentsOfURL: soundFile, error: nil)
+            audioPlayer.enableRate = true
         } else {
             println("Error: No file named " + fileName + " " + fileType + " in mainBundle")
         }
@@ -35,11 +35,24 @@ class PlaySoundsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    // wraps similar functionality across all play methods
+    func defaultSoundPlay(rate: Float32){
+        audioPlayer.stop()
+        audioPlayer.currentTime = 0.0
+        audioPlayer.rate = rate
+        audioPlayer.play()
+    }
+    
+    @IBAction func fastPlay(sender: UIButton) {
+        defaultSoundPlay(1.5)
+    }
+    
     @IBAction func slowPlay(sender: UIButton) {
-        self.audioPlayer.stop()
-        self.audioPlayer.rate = 0.5
-        self.audioPlayer.play()
+        defaultSoundPlay(0.5)
+    }
+    
+    @IBAction func stopPlay(sender: UIButton) {
+        audioPlayer.stop()
     }
     
     /*

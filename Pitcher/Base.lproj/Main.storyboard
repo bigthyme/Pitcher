@@ -142,34 +142,69 @@
                                     <action selector="slowPlay:" destination="5Y9-oP-gCb" eventType="touchUpInside" id="AV6-Z0-nNF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="isw-EL-Xai">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ROM-mc-tkj">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" image="slow">
+                                <state key="normal" image="fast">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="259" y="114" width="100" height="100"/>
-                                </variation>
                                 <connections>
-                                    <action selector="slowPlay:" destination="5Y9-oP-gCb" eventType="touchUpInside" id="Hum-1C-min"/>
+                                    <action selector="fastPlay:" destination="5Y9-oP-gCb" eventType="touchUpInside" id="26m-5g-VT2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ToS-00-na7">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="stop">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopPlay:" destination="5Y9-oP-gCb" eventType="touchUpInside" id="7ER-WF-Six"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerY" secondItem="ToS-00-na7" secondAttribute="centerY" constant="-238" id="6CK-gF-93B"/>
                             <constraint firstItem="oah-rA-20v" firstAttribute="width" secondItem="8zZ-1V-esg" secondAttribute="width" id="8ou-Dj-Hgz"/>
+                            <constraint firstAttribute="centerY" secondItem="ToS-00-na7" secondAttribute="centerY" constant="-238" id="9b3-2B-Z3K"/>
+                            <constraint firstItem="ROM-mc-tkj" firstAttribute="leading" secondItem="oah-rA-20v" secondAttribute="trailing" constant="108" id="EyV-yj-CqX">
+                                <variation key="widthClass=compact" constant="110"/>
+                            </constraint>
                             <constraint firstItem="oah-rA-20v" firstAttribute="top" secondItem="CNO-n5-GaB" secondAttribute="bottom" constant="51" id="KJd-Q5-jbe"/>
                             <constraint firstItem="oah-rA-20v" firstAttribute="top" secondItem="CNO-n5-GaB" secondAttribute="bottom" constant="51" id="OeH-Ji-hJ3"/>
-                            <constraint firstItem="oah-rA-20v" firstAttribute="leading" secondItem="8zZ-1V-esg" secondAttribute="leadingMargin" constant="30" id="XeS-HL-krT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ROM-mc-tkj" secondAttribute="trailing" constant="56" id="PYU-y3-2Xi">
+                                <variation key="widthClass=compact" constant="10"/>
+                            </constraint>
+                            <constraint firstAttribute="centerY" secondItem="ToS-00-na7" secondAttribute="centerY" constant="-238" id="RNO-qc-xCv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ROM-mc-tkj" secondAttribute="trailing" constant="56" id="Utz-Ep-xuB"/>
+                            <constraint firstItem="oah-rA-20v" firstAttribute="leading" secondItem="8zZ-1V-esg" secondAttribute="leadingMargin" constant="30" id="XeS-HL-krT">
+                                <variation key="widthClass=compact" constant="10"/>
+                            </constraint>
+                            <constraint firstAttribute="centerY" secondItem="ToS-00-na7" secondAttribute="centerY" constant="-238" id="aqY-Dj-Ynn"/>
+                            <constraint firstAttribute="centerX" secondItem="ToS-00-na7" secondAttribute="centerX" constant="-0.5" id="gjR-NF-Tmp"/>
+                            <constraint firstItem="ROM-mc-tkj" firstAttribute="top" secondItem="CNO-n5-GaB" secondAttribute="bottom" constant="50" id="iWI-6G-aj4"/>
+                            <constraint firstItem="ROM-mc-tkj" firstAttribute="top" secondItem="CNO-n5-GaB" secondAttribute="bottom" constant="56" id="mDb-Dn-n6Q"/>
                             <constraint firstItem="oah-rA-20v" firstAttribute="top" secondItem="CNO-n5-GaB" secondAttribute="bottom" constant="50" id="puU-aI-dha"/>
+                            <constraint firstItem="sIG-0F-0nJ" firstAttribute="top" secondItem="ToS-00-na7" secondAttribute="bottom" constant="37" id="rLU-sK-Y7Y"/>
                             <constraint firstItem="oah-rA-20v" firstAttribute="leading" secondItem="8zZ-1V-esg" secondAttribute="leadingMargin" constant="4" id="vkU-ov-qSU"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="oah-rA-20v"/>
-                                <exclude reference="isw-EL-Xai"/>
+                                <exclude reference="ROM-mc-tkj"/>
+                                <exclude reference="ToS-00-na7"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="rLU-sK-Y7Y"/>
+                                <exclude reference="EyV-yj-CqX"/>
+                                <exclude reference="PYU-y3-2Xi"/>
+                                <exclude reference="Utz-Ep-xuB"/>
+                                <exclude reference="iWI-6G-aj4"/>
+                                <exclude reference="mDb-Dn-n6Q"/>
+                                <exclude reference="6CK-gF-93B"/>
+                                <exclude reference="9b3-2B-Z3K"/>
+                                <exclude reference="RNO-qc-xCv"/>
+                                <exclude reference="aqY-Dj-Ynn"/>
+                                <exclude reference="gjR-NF-Tmp"/>
                                 <exclude reference="8ou-Dj-Hgz"/>
                                 <exclude reference="KJd-Q5-jbe"/>
                                 <exclude reference="OeH-Ji-hJ3"/>
@@ -181,9 +216,21 @@
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="oah-rA-20v"/>
-                                <include reference="isw-EL-Xai"/>
+                                <include reference="ROM-mc-tkj"/>
+                                <include reference="ToS-00-na7"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="rLU-sK-Y7Y"/>
+                                <exclude reference="EyV-yj-CqX"/>
+                                <include reference="PYU-y3-2Xi"/>
+                                <exclude reference="Utz-Ep-xuB"/>
+                                <include reference="iWI-6G-aj4"/>
+                                <exclude reference="mDb-Dn-n6Q"/>
+                                <exclude reference="6CK-gF-93B"/>
+                                <exclude reference="9b3-2B-Z3K"/>
+                                <exclude reference="RNO-qc-xCv"/>
+                                <exclude reference="aqY-Dj-Ynn"/>
+                                <include reference="gjR-NF-Tmp"/>
                                 <exclude reference="8ou-Dj-Hgz"/>
                                 <exclude reference="KJd-Q5-jbe"/>
                                 <exclude reference="OeH-Ji-hJ3"/>
@@ -200,6 +247,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="fast" width="100" height="100"/>
         <image name="microphone" width="100" height="100"/>
         <image name="slow" width="100" height="100"/>
         <image name="stop" width="50" height="50"/>
