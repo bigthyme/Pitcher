@@ -26,21 +26,23 @@ class PlaySoundsViewController: UIViewController {
         // setup fast button programatically
         fastButton.frame = CGRect(x: 274, y: 114, width: 100, height: 100)
         fastButton.setBackgroundImage(rabbitImage, forState: .Normal)
-        
+        fastButton.setTranslatesAutoresizingMaskIntoConstraints(false)
+
         self.view.addSubview(fastButton)
         
         fastButton.addTarget(self, action:"fastPlay:", forControlEvents: UIControlEvents.TouchUpInside)
+        
         //make dictionary for views
         let viewsDictionary = ["fastButton":fastButton]
         
         //sizing constraints
         
         //controls
-        let control_constraint_H:NSArray = NSLayoutConstraint.constraintsWithVisualFormat("H:|-[fastButton]-10-|", options: NSLayoutFormatOptions.AlignAllCenterY, metrics: nil, views: viewsDictionary)
-        let control_constraint_V:NSArray = NSLayoutConstraint.constraintsWithVisualFormat("V:[fastButton]-50-|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary)
+//        let control_constraint_H:NSArray = NSLayoutConstraint.constraintsWithVisualFormat("H:|-[fastButton]-10-|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary)
+        let control_constraint_V:NSArray = NSLayoutConstraint.constraintsWithVisualFormat("V:|-[fastButton]-50-|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary)
 
-//        view2.addConstraints(control_constraint_H)
-//        view2.addConstraints(control_constraint_V)
+//        fastButton.addConstraints(control_constraint_H)
+        fastButton.addConstraints(control_constraint_V)
         
         if var soundFile = NSURL(fileURLWithPath: bundle.pathForResource(fileName, ofType: fileType)!) {
             audioPlayer = AVAudioPlayer(contentsOfURL: soundFile, error: nil)
