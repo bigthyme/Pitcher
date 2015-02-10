@@ -22,11 +22,25 @@ class PlaySoundsViewController: UIViewController {
         var fileName = "life_is_like"
         var fileType = "mp3"
         var bundle = NSBundle.mainBundle()
-        
+        var rabbitImage = UIImage(named: "fast.png") as UIImage?
         // setup fast button programatically
         fastButton.frame = CGRect(x: 274, y: 114, width: 100, height: 100)
+        fastButton.setBackgroundImage(rabbitImage, forState: .Normal)
+        
+        self.view.addSubview(fastButton)
+        
         fastButton.addTarget(self, action:"fastPlay:", forControlEvents: UIControlEvents.TouchUpInside)
-//        self.view.addSubView(fastButton)
+        //make dictionary for views
+        let viewsDictionary = ["fastButton":fastButton]
+        
+        //sizing constraints
+        
+        //controls
+        let control_constraint_H:NSArray = NSLayoutConstraint.constraintsWithVisualFormat("H:|-[fastButton]-10-|", options: NSLayoutFormatOptions.AlignAllCenterY, metrics: nil, views: viewsDictionary)
+        let control_constraint_V:NSArray = NSLayoutConstraint.constraintsWithVisualFormat("V:[fastButton]-50-|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary)
+
+//        view2.addConstraints(control_constraint_H)
+//        view2.addConstraints(control_constraint_V)
         
         if var soundFile = NSURL(fileURLWithPath: bundle.pathForResource(fileName, ofType: fileType)!) {
             audioPlayer = AVAudioPlayer(contentsOfURL: soundFile, error: nil)
@@ -35,7 +49,7 @@ class PlaySoundsViewController: UIViewController {
             println("Error: No file named " + fileName + " " + fileType + " in mainBundle")
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
