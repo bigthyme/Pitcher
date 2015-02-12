@@ -26,7 +26,7 @@ class PlaySoundsViewController: UIViewController {
         // setup fast button programatically
         fastButton.frame = CGRect(x: 274, y: 114, width: 100, height: 100)
         fastButton.setBackgroundImage(rabbitImage, forState: .Normal)
-
+        fastButton.setTranslatesAutoresizingMaskIntoConstraints(false)
         self.view.addSubview(fastButton)
         
         fastButton.addTarget(self, action:"fastPlay:", forControlEvents: UIControlEvents.TouchUpInside)
@@ -34,12 +34,10 @@ class PlaySoundsViewController: UIViewController {
         //make dictionary for views
         let viewsDictionary = ["fastButton":fastButton]
         
-        //sizing constraints
-        
         //controls
         let controlConstraint = NSLayoutConstraint(
             item:fastButton,
-            attribute:.CenterX,
+            attribute:.Left,
             relatedBy:.Equal,
             toItem:self.view,
             attribute:.CenterX,
@@ -47,7 +45,7 @@ class PlaySoundsViewController: UIViewController {
             constant:0.0
         )
 
-        self.view.addConstraints(controlConstraint)
+        self.view.addConstraint(controlConstraint)
         
         if var soundFile = NSURL(fileURLWithPath: bundle.pathForResource(fileName, ofType: fileType)!) {
             audioPlayer = AVAudioPlayer(contentsOfURL: soundFile, error: nil)
