@@ -34,6 +34,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func stopAudio(sender: UIButton) {
+        // here is an example of an action that will change users
+        Appboy.sharedInstance().changeUser("8741039")
+        
         recordingLabel.hidden = true;
         recordButton.enabled = true;
     }
